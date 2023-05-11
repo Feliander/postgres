@@ -6,4 +6,4 @@
 
 Quick start postgresql server with pg admin in docker for debian family os.
 
-Creates pgdata and pgadmin_data volumes inside the repository.
+Creates pgdata and pgadmin_data volumes inside the repository with mod 700 for roots and root group.

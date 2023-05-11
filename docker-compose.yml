@@ -2,6 +2,7 @@ version: '3'
 
 services:
   postgres:
+    user: root
     image: postgres:15
     restart: always
     hostname: postgres
@@ -15,7 +16,7 @@ services:
       - './pgdata:/var/lib/postgresql/data/pgdata'
 
   pgadmin:
-    container_name: pgadmin
+    user: root
     image: dpage/pgadmin4:6
     restart: always
     ports:
@@ -25,5 +26,3 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
       - './pgadmin_data:/var/lib/pgadmin'
-    links:
-      - 'postgres:pgsql-server'
